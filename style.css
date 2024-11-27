@@ -1,0 +1,61 @@
+body {
+    background-color:beige;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 0; 
+    flex-direction: column; 
+}
+h1 {
+    color:white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+#carrefacebook{
+    background-color: rgb(43, 106, 169);
+    width: 500px; 
+    height: 500px;
+    cursor: pointer; 
+    justify-content: center; 
+    align-items: center; 
+    margin:10px;
+    border-radius: 50%;
+
+}
+
+#carretwitter {
+    background-color: rgb(83, 179, 234);
+    width: 500px;
+    height: 500px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin:10px;
+    border-radius:15% ;
+}
+  
+#carreinstagram {
+    background-color: rgb(178, 92, 106);
+    width: 500px;
+    height: 500px;
+    cursor: pointer;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    margin:10px;
+    border-radius: 31%;
+}
+
+#boxes {
+  display: flex;
+  flex-wrap: wrap; 
+  width: 100%; 
+  justify-content: center; 
+  align-items: center; 
+
+}
+
+
+

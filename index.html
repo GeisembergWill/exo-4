@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 4 Javascript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>FOLLOW US</h1>
+
+    <div id="boxes">
+        <div class="carre" id="carrefacebook"><img src="images/facebook-brands-solid.svg" alt="Facebook" data-network="Facebook"></div>
+        <div class="carre" id="carretwitter"><img src="images/square-twitter-brands-solid.svg" alt="Twitter" data-network="Twitter"></div>
+        <div class="carre" id="carreinstagram"><img src="images/instagram-brands-solid.svg" alt="Instagram" data-network="Instagram"></div>
+    </div>
+    
+    <script>
+    const boxes = document.querySelectorAll(".carre"); 
+    boxes.forEach(box => { 
+        box.addEventListener("click", function(event) { 
+            console.log("click"); 
+            const newBackground = window.getComputedStyle(box).backgroundColor;
+            document.body.style.backgroundColor = newBackground;
+            box.innerText = box.data-network;
+            console.log(newBackground); 
+        }); 
+    });
+    </script>   
+</body>
+</html>
