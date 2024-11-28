@@ -10,22 +10,49 @@
     <h1>FOLLOW US</h1>
 
     <div id="boxes">
-        <div class="carre" id="carrefacebook"><img src="images/facebook-brands-solid.svg" alt="Facebook" data-network="Facebook"></div>
-        <div class="carre" id="carretwitter"><img src="images/square-twitter-brands-solid.svg" alt="Twitter" data-network="Twitter"></div>
-        <div class="carre" id="carreinstagram"><img src="images/instagram-brands-solid.svg" alt="Instagram" data-network="Instagram"></div>
+        <!-- crée une classe boxes -->
+        <div class="carre facebook" id="carrefacebook" data-value="Facebook"><img src="images/facebook-brands-solid.svg" alt="Facebook">
+            <p id="vide">Facebook</p>
+            
+        </div>
+        <div class="carre twitter" id="carretwitter" data-value="Twitter"><img src="images/square-twitter-brands-solid.svg" alt="Twitter">
+            <p id="vide">Twitter</p> 
+        </div>
+        <div class="carre instagram" id="carreinstagram" data-value="Instagram"><img src="images/instagram-brands-solid.svg" alt="Instagram">
+            <p id="vide">Instagram</p> 
+        </div>
     </div>
     
     <script>
-    const boxes = document.querySelectorAll(".carre"); 
-    boxes.forEach(box => { 
-        box.addEventListener("click", function(event) { 
-            console.log("click"); 
-            const newBackground = window.getComputedStyle(box).backgroundColor;
-            document.body.style.backgroundColor = newBackground;
-            box.innerText = box.data-network;
-            console.log(newBackground); 
-        }); 
+   const boxes = document.querySelectorAll(".carre");
+
+        boxes.forEach(box => {
+        box.addEventListener("click", function() {
+        // Déclarations de constantes
+        const isActive = box.classList.contains('active');
+        const newBackground = window.getComputedStyle(box).backgroundColor;
+        const name = box.getAttribute('data-value');
+        const pText = box.querySelector("p");
+
+        if (isActive) { 
+            document.body.style.backgroundColor = ""; 
+            box.style.borderRadius = ""; 
+            pText.style.display = "none"; // Masque le texte
+            box.style.boxShadow = "";
+        } else { 
+            document.body.style.backgroundColor = newBackground; 
+            box.style.borderRadius = "20%";
+            pText.style.display = "block"; // Affiche le texte
+            box.style.boxShadow = "10px 5px 5px red";
+        }
+
+        box.classList.toggle('active'); 
     });
+});
+         
+         
+
+
     </script>   
 </body>
 </html>
